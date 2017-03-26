@@ -1,0 +1,24 @@
+table {
+  border: 3px solid black;
+  height: 300px;
+  width: 300px;
+}
+
+td{
+  border: 2px solid black;
+}
+
+.playBoard{
+  background-color: darkgray;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+}
+
+#display{
+  text-align: center;
+}
+
+#reset{
+  text-align: center;
+}
