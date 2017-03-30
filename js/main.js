@@ -56,7 +56,7 @@ function resetFunc() {
 function render() {
   // set cell with id's content to whatever the element is in the state array at the same index
   state.forEach(function(val,i) {
-    var $sq = $('#' + i);
+    var $sq = $(`#${i}`);
     if(val) {
       $sq.html(val === 1 ? 'X' : 'O');
     } else {
