@@ -3,32 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Tic-Tac-Toe</title>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Tic-Tac-Toe</h1>
-<div id="display"></div>
-<table>
-  <tr>
-    <td class="playBoard" id="0"></td>
-    <td class="playBoard vgrid" id="1"></td>
-    <td class="playBoard" id="2"></td>
-  </tr>
-  <tr class="hgrid">
-    <td class="playBoard" id="3"></td>
-    <td class="playBoard vgrid" id="4"></td>
-    <td class="playBoard" id="5"></td>
-  </tr>
-  <tr>
-    <td class="playBoard" id="6"></td>
-    <td class="playBoard vgrid" id="7"></td>
-    <td class="playBoard" id="8"></td>
-  </tr>
-</table>
-<button id="reset">reset</button>
+  <h1>Tic-Tac-Toe</h1>
+  <div class="gamespace">
+    <div id="display"></div>
+    <table>
+      <tr>
+        <td class="play-board" id="0"></td>
+        <td class="play-board vgrid" id="1"></td>
+        <td class="play-board" id="2"></td>
+      </tr>
+      <tr class="hgrid">
+        <td class="play-board" id="3"></td>
+        <td class="play-board vgrid" id="4"></td>
+        <td class="play-board" id="5"></td>
+      </tr>
+      <tr>
+        <td class="play-board" id="6"></td>
+        <td class="play-board vgrid" id="7"></td>
+        <td class="play-board" id="8"></td>
+      </tr>
+    </table>
+  </div>
+  <button id="reset">reset</button>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

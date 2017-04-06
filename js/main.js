@@ -1,7 +1,7 @@
-// $(function(){
+$(function(){
 console.log('Tic Tac Toe script loaded');
 
-// Variables
+/*--- variables ---*/
 var nextMove, currentPlayer, state, winner, gameOverMsg;
 
 var $displayEl = $('#display');
@@ -18,25 +18,23 @@ var winningCombos = [
   [2, 4, 6]
 ];
 
-//Event Listeners
-
+/*--- event listeners ---*/
 $playSpace.on('click', 'td', runTurn);
 
 $('#reset').on('click', resetFunc);
 
-// Functions
-
+/*--- functions ---*/
 
 function runTurn(evt) {
   var id = this.id;
   if (state[id]) return;
-  state[id] = currentPlayer === 'x' ? 1 : -1;
+  state[id] = currentPlayer === 'X' ? 1 : -1;
   // turn *= -1;
   winner = getWinner();
   if (winner) {
     gameOverMsg = 'Congrats player ' + (winner === 1 ? 'X' : 'O') + '!';
   } else if (!state.includes(0)) {
-    gameOverMsg = "Rats, another cat's game";
+    gameOverMsg = "Shoot, another tie. Play again?";
   }
   nextMove.shift();
   currentPlayer = nextMove[0];
@@ -45,7 +43,7 @@ function runTurn(evt) {
 }
 
 function resetFunc() {
-  nextMove = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x', 'o'];
+  nextMove = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O'];
   currentPlayer = nextMove[0];
   state = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   winner = 0;
@@ -57,11 +55,13 @@ function render() {
   // set cell with id's content to whatever the element is in the state array at the same index
   state.forEach(function(val,i) {
     var $sq = $(`#${i}`);
-    if(val) {
-      $sq.html(val === 1 ? 'X' : 'O');
-    } else {
-      $sq.html('');
-    }
+    if(val === 1) {
+      $sq.addClass('x');
+    } else if (val === -1) {
+        $sq.addClass('o');
+      } else {
+        $sq.removeClass('x').removeClass('o');
+      }
   });
   if (gameOverMsg) {
     $displayEl.html(gameOverMsg);
@@ -70,12 +70,12 @@ function render() {
   }
 }
 
-//Win Logic
+//win logic
 function sumThree(combo){
   return state[combo[0]] + state[combo[1]] + state[combo[2]];
 }
 
-// iterates the winning combos through the state array and sumss them, returns 1 or -1 for winner
+// iterates the winning combos through the state array and sums them, returns 1 or -1 for winner
 function getWinner(){
   for (var i=0; i<winningCombos.length; i++) {
     var sum = sumThree(winningCombos[i]);
@@ -85,10 +85,8 @@ function getWinner(){
   }
 }
 
-
-
 // Initialize
 resetFunc();
 
 
-// });
+});

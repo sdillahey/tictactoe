@@ -1,24 +1,62 @@
+body {
+  text-align: center;
+  background-image: url('../images/weather.png');
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 5px;
+}
+
+.gamespace {
+  background-color: rgba(255, 255, 255, .4);
+  padding: 10px;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
 table {
-  border: 3px solid black;
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 10px;
 }
 
-td{
-  border: 2px solid black;
+.hgrid {
+  border-top: 8px solid black;
+  border-bottom: 8px solid black;
 }
 
-.playBoard{
-  background-color: darkgray;
+.vgrid {
+  border-left: 8px solid black;
+  border-right: 8px solid black;
+}
+
+.play-board {
   height: 80px;
   width: 80px;
-  text-align: center;
 }
 
-#display{
-  text-align: center;
+#display {
+  padding: 5px;
+  margin: 3px;
+  font-size: 28px;
+  width: 400px;
+  height: 65px;
+  margin: 0 auto;
+  line-height: 30px;
 }
 
-#reset{
-  text-align: center;
+.x {
+background-image: url('../images/x.png');
+background-color: rgba(255, 255, 255, .4);
+
+}
+
+.o {
+  background-image: url('../images/o.png');
+  background-color: rgba(255, 255, 255, .4);
 }
